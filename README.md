@@ -104,3 +104,14 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
+
+Launch Hyprland on login automatically
+
+```
+if [[ -z "${WAYLAND_DISPLAY}" ]] && [[ "${XDG_VTNR}" = "1" ]]; then
+  exec dbus-run-session Hyprland
+fi
+```
+
+Steam Command to run steam from tty
+`STEAM_MULTIPLE_XWAYLANDS=1 gamemoderun gamescope -W 2560 -H 1440 -r 165 -e --xwayland-count 2 --adaptive-sync -- steam -gamepadui -steamdeck`
