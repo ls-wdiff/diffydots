@@ -1,5 +1,8 @@
 # diffydots
 Hyprland Setup and Scripts
+![image](https://github.com/user-attachments/assets/621d06f1-5691-494e-b14a-f7945c782833)
+
+
 
 Explicit Package List
 ```
