@@ -1,0 +1,102 @@
+{   
+    "output": "DP-1",
+    "layer": "top",
+    "position": "top",
+    "modules-left": ["cpu", "memory","network", "hyprland/window"],
+    "modules-center":["hyprland/workspaces"],
+    "modules-right": [
+        "tray", 
+        "custom/wallpaper",
+        "pulseaudio",
+        "clock",
+        "custom/power-menu"
+    ],
+       "clock": {
+        "interval": 60,
+        "align": 0,
+        "rotate": 0,
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%I:%M}",
+        "format-alt": "{:%a %b %d, %G}"
+    },
+        "tray": {
+          "spacing": 20
+    },
+    "bluetooth": {
+        "format": "󰣇",
+        "on-click": "~/.config/rofi/scripts/launcher",
+        "on-click-right": "blueberry"
+    },
+    "cpu": {
+        "interval": 10,
+        "format": "{usage}%",
+        "max-length": 10,
+        "on-click": "kitty htop"
+    },
+    "memory": {
+      "interval": 10,
+      "format": "{used}GB/32GB"
+    },
+    "network": {
+        "format-wifi": "{icon}",
+        "format-ethernet": "{bandwidthDownBytes}",
+        "interval": 5,
+        "format-disconnected": "󰖪",
+        "tooltip-format": "{essid}",
+        "on-click": "kitty nmtui",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+    },
+    "pulseaudio": {
+        "format": "{icon} ",
+        "format-muted": " 󰸈 ",
+        "on-click": "pavucontrol &",
+        "on-click-right": "pamixer -t",
+        "scroll-step": 3,
+        "on-scroll-up": "~/.config/waybar/scripts/volume.sh --inc",
+        "on-scroll-down": "~/.config/waybar/scripts/volume.sh --dec"
+    },
+    "custom/power-menu": {
+        "format": "⏻",
+        "on-click": "~/.config/rofi/powermenu/type-1/powermenu.sh"
+    },
+    "custom/launcher": {
+          "icon-size": 8,
+          "spacing": 0,
+        "format": "󰣇",
+        "on-click": "~/.config/rofi/scripts/launcher"
+    },
+    "custom/wallpaper": {
+        "format": "󰄄",
+        "on-click": "~/.config/waybar/scripts/wallpaper.sh",
+        "on-click-right": "grimshot copy area"
+    },
+    "hyprland/workspaces": {
+	      "format": "{icon}",
+      	"format-icons": {
+		    "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "1": "󰲠",
+		    "2": "󰲢",
+		    "3": "󰲤",
+		    "4": "󰲦",
+		    "5": "󰲨",
+        "6": "󰲪",
+        "7": "󰲬",
+        "8": "󰲮",
+        "9": "󰲰",
+        "0": "",
+		    "default": "",
+	      "empty": ""
+},    
+       "persistent-workspaces": {
+             "*": 3 
+       },
+
+    "hyprland/window": {
+    "format": " > {} ",
+    "min-length": 40
+    },
+    "separate-outputs": true
+    }   
+  }
+}
